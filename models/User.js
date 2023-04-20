@@ -1,33 +1,25 @@
 const mongoose = require(`mongoose`)
 
 const UserSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        required:[true,"Please Enter a Name"]
+    },
     email:{
         type: String,
         required:[true,"Please Enter an Email"]
-    },
-    firstname:{
-        type: String,
-        required:[true,"Please Enter a First Name"]
-    },
-    lastname:{
-        type: String,
-        required:[true,"Please Enter a Last Name"]
     },
     password:{
         type: String,
         required:[true,"Please Enter a Password"]
     },
-    service:{
-        type: String,
-        required:[true,"Please Enter the service"]
+    contactno:{
+        type:Number,
+        required:[true,"Please Enter a Contact Number"]
     },
-    bio:{
+    country:{
         type: String,
-        required:[true,"Please Enter the Bio"]
+        required:[true,"Please Enter the Country"]
     },
-    pic:{
-        type: String,
-        required:[true,"Please Enter a Pic Url"]
-    }
 })
 module.exports = mongoose.model(`User`,UserSchema);
